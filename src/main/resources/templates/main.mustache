@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main page</title>
+</head>
+<body>
+    <div>
+        <form action="/logout" method="post">
+            <input type="hidden" name="_csrf" value="{{_csrf.token}}">
+            <input type="submit" value="Sign Out"/>
+        </form>
+    </div>
+    <div>
+        <form method="post" action="add_point">
+            <input type="text" name="x" placeholder="X"/>
+            <input type="text" name="y" placeholder="Y"/>
+            <input type="text" name="r" placeholder="R"/>
+            <input type="hidden" name="_csrf" value="{{_csrf.token}}">
+            <button type="submit">Добавить</button>
+        </form>
+    </div>
+    <div>
+        <table>
+            <tr>
+                <td><b>X</b></td>
+                <td><b>Y</b></td>
+                <td><b>R</b></td>
+                <td><b>Result</b></td>
+                <td>Owner</td>
+            </tr>
+            {{#points}}
+            <tr>
+                <td>{{x}}</td>
+                <td>{{y}}</td>
+                <td>{{r}}</td>
+                <td>{{result}}</td>
+                <td><strong>{{ownerName}}</strong></td>
+            </tr>
+            {{/points}}
+        </table>
+    </div>
+</body>
+</html>
