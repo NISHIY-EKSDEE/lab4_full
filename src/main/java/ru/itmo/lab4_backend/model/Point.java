@@ -1,8 +1,12 @@
 package ru.itmo.lab4_backend.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.*;
+
 import javax.persistence.*;
 
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Table(name = "points")
 public class Point {
 
@@ -13,9 +17,11 @@ public class Point {
     private Double y;
     private Double r;
     private boolean result;
+
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
     private User owner;
+
 
     public Point(){}
 
@@ -26,14 +32,12 @@ public class Point {
         this.owner = user;
     }
 
-    //-----------------------------------------//
-     //------------GETTERS AND SETTERS----------//
-    //-----------------------------------------//
-
-
     public String getOwnerName(){
-        return owner != null ? owner.getUsername() : "<none>";
+        return owner.getUsername();
     }
+
+    ////GETTERS AND SETTERS
+
 
     public Long getId() {
         return id;

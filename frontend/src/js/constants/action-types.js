@@ -1,0 +1,10 @@
+export const ADD_POINT = "ADD_POINT";
+export const POINTS_LOADED = "POINTS_LOADED";
+export const APP_LOGIN = "APP_LOGIN";
+export const APP_LOGIN_SUCCESS = "APP_LOGIN_SUCCESS";
+export const APP_LOGIN_FAIL = "APP_LOGIN_FAIL";
+export const APP_SIGNUP = "APP_SIGNUP";
+export const APP_SIGNUP_SUCCESS = "APP_SIGNUP_SUCCESS";
+export const APP_SIGNUP_FAIL = "APP_SIGNUP_FAIL";
+export const APP_CHANGE_R = "APP_CHANGE_R";
+export const APP_LOGOUT = "APP_LOGOUT";

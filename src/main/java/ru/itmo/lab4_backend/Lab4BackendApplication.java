@@ -14,4 +14,5 @@ public class Lab4BackendApplication {
         SpringApplication.run(Lab4BackendApplication.class, args);
     }
 
+
 }
